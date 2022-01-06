@@ -24,6 +24,11 @@ func registerComponent(c Component) Component {
 	return c
 }
 
+var GitConfig = registerComponent(Component{
+	Name:        "git-config",
+	IsInstalled: FileExists("$HOME/.gitconfig"),
+})
+
 var Tree = registerComponent(Component{
 	Name:        "tree",
 	IsInstalled: CommandExists("tree"),
@@ -80,6 +85,7 @@ var Ag = registerComponent(Component{
 
 var AltTab = registerComponent(Component{
 	Name:        "alt-tab",
+	IsInstalled: OsxAppExists("com.lwouis.alt-tab-macos"),
 	Install:     HomebrewInstall("alt-tab"),
 })
 
