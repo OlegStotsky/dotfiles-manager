@@ -60,3 +60,9 @@ var Docker = register(dotfiles.Component{
 	IsInstalled: dotfiles.CommandExists("docker"),
 	Install:     dotfiles.HomebrewInstall("docker", "--cask"),
 })
+
+var JetbrainsToolbox = register(dotfiles.Component{
+	Name:        "jetbrains-toolbox",
+	IsInstalled: dotfiles.OsxAppExists("com.jetbrains.toolbox"),
+	Install:     dotfiles.DmgInstall("https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.22.10970-arm64.dmg", "JetBrains Toolbox"),
+})
