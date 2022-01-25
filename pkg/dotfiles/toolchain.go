@@ -29,6 +29,23 @@ var PkgInstall = func(url string) Installer {
 	}
 }
 
+var DmgInstall = func(url, volumeName string) Installer {
+	return func() error {
+		dmgPath, err := Download(url, ".dmg")
+		if err != nil {
+			return err
+		}
+		return Execute("/bin/sh", "-c", fmt.Sprintf(`
+sudo hdiutil detach '/Volumes/%s';
+sudo hdiutil attach %s;
+pushd '/Volumes/%s';
+sudo cp -pPR '/Volumes/%s/%s.app' /Applications
+popd;
+sudo hdiutil detach '/Volumes/%s';
+		`, volumeName, dmgPath, volumeName, volumeName, volumeName, volumeName))
+	}
+}
+
 var CurlInstall = func(url string) Installer {
 	return func() error {
 		bashScriptPath, err := Download(url, ".sh")
