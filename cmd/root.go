@@ -12,7 +12,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "onboarding",
+	Use:   "dotfiles",
 	Short: "Laptop configuration as a code",
 	Long:  `Declarative typed description of applications & configurations to install.`,
 	// Uncomment the following line if your bare application

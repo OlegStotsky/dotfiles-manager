@@ -7,7 +7,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/asverdlov/onboarding/pkg"
+	"github.com/asverdlov/dotfiles/pkg/registry"
 	"github.com/spf13/cobra"
 )
 
@@ -18,7 +18,7 @@ var installCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		componentName := args[0]
-		registry := pkg.Registry()
+		registry := registry.Registry()
 
 		component, found := registry[componentName]
 		if !found {

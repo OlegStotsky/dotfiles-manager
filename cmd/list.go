@@ -7,7 +7,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/asverdlov/onboarding/pkg"
+	"github.com/asverdlov/dotfiles/pkg/registry"
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +22,7 @@ var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List available components",
 	Run: func(cmd *cobra.Command, args []string) {
-		registry := pkg.Registry()
+		registry := registry.Registry()
 
 		s := "Components:\n"
 		for _, c := range registry {

@@ -1,4 +1,4 @@
-package pkg
+package dotfiles
 
 import (
 	"errors"
@@ -55,6 +55,7 @@ var installedApplications map[string]*osxApplication
 
 var osxAppRoots = []string{"/", "$HOME/"}
 
+// TODO: use defaults domains (https://marslo.github.io/ibook/osx/defaults.html)
 var OsxAppExists = func(cfBundleIdentifier string) ComponentSearcher {
 	return func() (bool, error) {
 		if installedApplications == nil {
