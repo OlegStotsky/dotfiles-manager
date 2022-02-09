@@ -19,6 +19,7 @@ var homebrewPackages = []string{
 	"helm",
 	"kind",
 	"nvm", // node.js version management
+	"golangci-lint",
 }
 
 func init() {
