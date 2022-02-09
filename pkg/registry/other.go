@@ -93,3 +93,9 @@ var Postgres = register(dotfiles.Component{
 	IsInstalled: dotfiles.CommandExists("psql"),
 	Install:     dotfiles.HomebrewInstall("postgresql@10"),
 })
+
+var Cobra = register(dotfiles.Component{
+	Name:        "cobra",
+	IsInstalled: dotfiles.CommandExists("cobra"),
+	Install:     dotfiles.GoInstall("github.com/spf13/cobra/cobra"),
+})

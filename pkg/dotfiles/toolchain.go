@@ -185,3 +185,7 @@ func ConfigPartInstall(path, partId string) Installer {
 func GitInstall(repoUrl, installPath string) Installer {
 	return ExecuteInstall("git", "clone", repoUrl, os.ExpandEnv(installPath))
 }
+
+func GoInstall(url string) Installer {
+	return ExecuteInstall("go", "get", "-u", url)
+}
