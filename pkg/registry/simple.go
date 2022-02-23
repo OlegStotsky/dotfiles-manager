@@ -20,6 +20,10 @@ var homebrewPackages = []string{
 	"kind",
 	"nvm", // node.js version management
 	"golangci-lint",
+	// booking.com
+	"kops",
+	"saml2aws",
+	"direnv",
 }
 
 func init() {
