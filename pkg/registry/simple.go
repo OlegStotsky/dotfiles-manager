@@ -24,6 +24,7 @@ var homebrewPackages = []string{
 	"kops",
 	"saml2aws",
 	"direnv",
+	"awscli",
 }
 
 func init() {
