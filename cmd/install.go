@@ -7,15 +7,16 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/asverdlov/dotfiles/pkg/registry"
 	"github.com/spf13/cobra"
+
+	"github.com/asverdlov/dotfiles/pkg/registry"
 )
 
 // installCmd represents the install command
 var installCmd = &cobra.Command{
 	Use:   "install",
 	Short: "Install a component",
-	Args:  cobra.ExactArgs(1),
+	//Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		componentName := args[0]
 		registry := registry.Registry()
